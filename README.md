@@ -45,7 +45,14 @@ module module_name
 
 go 1.25.3
 ```
+- The `go.mod` file declares the name of the module 
+- the minimum supported version of
+Go for the module, 
+- and any other modules that your module depends on.
+- the `go get` and `go mod tidy`
+commands to manage changes to the file.
 
+It as being similar to the `requirements.txt` file used by Python.
 
 
 
