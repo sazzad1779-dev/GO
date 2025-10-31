@@ -70,7 +70,7 @@ are similar to types that are found in other languages: `booleans, integers, flo
 
 **The Zero Value:** Go assigns a default zero value to any variable that is declared but not assigned a value.
 
-**Literals**
+## Literals
 
 A Go literal is an explicitly specified number, character, or string. 
 
@@ -81,6 +81,7 @@ Basic rules for all literals:
 (base 8), or 0x for hexadecimal (base 16)`]
 - can use either upper- or lowercase letters for the prefix
 - To easier to read put underscores in the middle of literal. `1234`-> `1_2_3_4/1_234`
+- Literals are considered `untyped`.
 
 **integer literal**  
 - is a sequence of numbers.
@@ -92,6 +93,7 @@ Basic rules for all literals:
 
 **rune literal**
 - a character and is surrounded by `single` quotes.
+- rune type is an alias for the int32 type
 - can be written as,
   - single Unicode characters ('a')
   - 8-bit octal numbers ('\141')
@@ -99,3 +101,63 @@ Basic rules for all literals:
   - 16-bit hexadecimal numbers('\u0061')
   - 32-bit Unicode numbers ('\U00000061').
 - `Avoid using any of the `**numeric escapes**` for rune literals, unless the context makes your code clearer.`
+- There are also several
+backslash-escaped rune literals, with the most useful ones being newline ('\n'), tab('\t'), single quote ('\''), and backslash ('\\').
+
+**string literals**
+
+- double quotes `""`
+- The only characters that cannot appear are unescaped backslashes `(\)`, unescaped newlines`(\n)`, and unescaped double quotes`("")`.
+- The zero value for a string is the empty string.
+- concatenated by using the + operator.
+
+**raw string literal**
+
+- delimited with backquotes ``(`)``
+- can contain any character except a backquote.
+- can write a multiline, all characters are included as is.
+
+- ``Greetings and``\
+  ``"Salutations"``
+
+## Booleans
+
+- Variables of bool type can have one of two values: true or false.
+- The zero value for a bool is false.
+
+## Numeric Types
+
+### 1. Integer types
+Go provides both signed and unsigned integers in a variety of sizes, from one to eight bytes.
+
+
+*signed numbers*: **`-(n/2) to +(n/2)`**\
+*unsigned numbers*: **`0 to n`**(the values are always 0 or positive).
+
+Integer numbers size variation:
+- 8bits: int8 /uint8
+- 16bits: int8 /uint8
+- 32bits: int32 /uint32
+- 64bits: int64 /uint64
+
+Note:
+- byte is an alias for uint8
+
+### 2. Floating-point types
+Floating-point numbers size variation: `float32` / `float64`
+
+Note:
+- floats aren’t exact,A floating-point number cannot represent a decimal value exactly.
+- Do not use them to represent money or any other value that must have an exact decimal representation!
+- a `nonzero` floating-point variable by `0` returns `+Inf or -Inf`.
+- Dividing  0 by 0 returns NaN (Not a Number).
+- don’t do == and != to compare floats, because of the inexact
+nature.
+
+### Explicit Type Conversion
+
+- Go doesn’t allow automatic type promotion between variables.
+
+
+
+
