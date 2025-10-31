@@ -65,4 +65,37 @@ It as being similar to the `requirements.txt` file used by Python.
 
 ## *CHAPTER 2*
 
-*The Predeclared Types***:** *Go has many types built into the language, called predeclared types.*
+**The Predeclared Types:** Go has many types built into the language, called predeclared types.They
+are similar to types that are found in other languages: `booleans, integers, floats, and strings`.
+
+**The Zero Value:** Go assigns a default zero value to any variable that is declared but not assigned a value.
+
+**Literals**
+
+A Go literal is an explicitly specified number, character, or string. 
+
+Basic rules for all literals:
+-In Go single quotes and double quotes are not interchangeable.
+- different prefixes are used to indicate other bases
+[`0b for binary (base 2), 0o for octal
+(base 8), or 0x for hexadecimal (base 16)`]
+- can use either upper- or lowercase letters for the prefix
+- To easier to read put underscores in the middle of literal. `1234`-> `1_2_3_4/1_234`
+
+**integer literal**  
+- is a sequence of numbers.
+- base 10 by default
+
+**floating-point literal**
+- can define an exponent number with letter `e`. (such as `6.03e23`)
+- for 0x prefix,letter p for indicating any exponent (`0x12.34p5`)
+
+**rune literal**
+- a character and is surrounded by `single` quotes.
+- can be written as,
+  - single Unicode characters ('a')
+  - 8-bit octal numbers ('\141')
+  - 8-bit hexadecimal numbers ('\x61')
+  - 16-bit hexadecimal numbers('\u0061')
+  - 32-bit Unicode numbers ('\U00000061').
+- `Avoid using any of the `**numeric escapes**` for rune literals, unless the context makes your code clearer.`
