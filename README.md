@@ -202,6 +202,7 @@ Using **`var`** *keyword*,
 - within a function, the := operator to declare variable
 - it allows to assign values to existing variables too.\
 - `one limitation`, := is not legal outside of functions.
+
 ```go
 // The following two statements do exactly the same thing
 var x = 10
@@ -210,7 +211,33 @@ x := 10
 //These two lines both assign 10 to x and “hello” to y:
 var x, y = 10, "hello"
 x, y := 10, "hello"
-
 ```
 
+Note:
+- Avoid declaring variables outside of functions because they complicate data flow analysis.
 
+
+**Using const**
+-  use `const` to declare a value as immutable.
+
+
+```go
+package main
+import "fmt"
+const x int64 = 10  //vanilla declaration
+
+const (     // declare multiple variable 
+idKey = "id"
+nameKey = "name"
+)
+
+
+const z = 20 * 10 // declare without data type
+```
+- Calculated values in const variable is not allowed
+
+```go
+x := 5
+y := 10
+const z = x + y // this won't compile!
+```
