@@ -161,3 +161,56 @@ nature.
 
 
 
+### Ways to declare variables
+
+Using **`var`** *keyword*,
+
+**Using var keyword**
+
+```go
+    // 1. declare variable type and assign value
+    var a int = 10
+
+    // 2. declare variable without type but assign value
+    var a = 10  //by default int
+    var b = "string"      //by default string
+    var c = 10.1       // by default float64
+
+    //3. declare variable without type and assign value
+    var a int
+    var b string
+
+    //4. declare multiple variable at a time 
+    var a,b int =10,20 //with assign value
+    var a,b = 10,20 //without type
+    var a,b = 10,"string"
+    var a,b int  //without assign value
+
+    // If you are declaring multiple variables at once,can wrap them in a declaration list
+    var (
+        x int
+        y = 20
+        z int = 30
+        d, e = 40, "hello"
+        f, g string
+    )
+
+    // Note: For Multi variable declaration, dtype should be same when no value assign.
+```
+**Using := operator to declaration**
+
+- within a function, the := operator to declare variable
+- it allows to assign values to existing variables too.\
+- `one limitation`, := is not legal outside of functions.
+```go
+// The following two statements do exactly the same thing
+var x = 10
+x := 10
+
+//These two lines both assign 10 to x and “hello” to y:
+var x, y = 10, "hello"
+x, y := 10, "hello"
+
+```
+
+
