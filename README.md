@@ -143,6 +143,20 @@ Integer numbers size variation:
 Note:
 - byte is an alias for uint8
 
+```go
+The integer types in Go
+Type name  | Value range
+int8       |–128 to 127
+int16      |–32768 to 32767
+int32      |–2147483648 to 2147483647
+int64      |–9223372036854775808 to 9223372036854775807
+uint8      |0 to 255
+uint16     |0 to 65535
+uint32     |0 to 4294967295
+uint64     |0 to 18446744073709551615
+```
+
+
 ### 2. Floating-point types
 Floating-point numbers size variation: `float32` / `float64`
 
@@ -166,6 +180,7 @@ var sum1 float64 = float64(x) + y
 var sum2 int = x + int(y)
 fmt.Println(sum1, sum2)
 ```
+
 
 
 
