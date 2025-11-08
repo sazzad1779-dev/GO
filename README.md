@@ -241,3 +241,41 @@ x := 5
 y := 10
 const z = x + y // this won't compile!
 ```
+Go doesn’t provide a way to specify that a value calculated at runtime is immutable.\
+For example, the following code will fail to compile with the error x + y (value of
+type int) is not constant:
+```go
+x := 5
+y := 10
+const z = x + y // this won't compile!
+```
+
+**Typed and Untyped Constants**
+- constants can be typed or untyped.
+- In general, leaving a constant untyped gives you more flexibility.\
+
+Here’s what an `untyped constant` declaration looks like:
+```go
+const x = 10
+```
+
+All of the following assignments are legal:\
+constant variables can be assign to any other variable
+```go
+var y int = x
+var z float64 = x
+var d byte = x
+```
+Here’s what a typed constant declaration looks like:
+```go 
+const typedX int = 10
+```
+**This constant can be assigned directly only to an int**.
+
+### Unused Variables
+Go requirement is that every declared local variable must be read.\
+It is a compile-time error to declare a local variable and to not read its value.
+
+the Go compiler allows you to create unread constants with
+const.
+
