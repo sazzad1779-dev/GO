@@ -70,7 +70,7 @@ are similar to types that are found in other languages: `booleans, integers, flo
 
 **The Zero Value:** Go assigns a default zero value to any variable that is declared but not assigned a value.
 
-## Literals
+### Literals
 
 A Go literal is an explicitly specified number, character, or string. 
 
@@ -145,17 +145,23 @@ Note:
 
 ```go
 The integer types in Go
-Type name  | Value range
-int8       |–128 to 127
-int16      |–32768 to 32767
-int32      |–2147483648 to 2147483647
-int64      |–9223372036854775808 to 9223372036854775807
-uint8      |0 to 255
-uint16     |0 to 65535
-uint32     |0 to 4294967295
-uint64     |0 to 18446744073709551615
+[ Type name    |        Value range             ]
+--------------------------------------------------
+    int8       |  –128 to 127
+    int16      |  –32768 to 32767
+    int32      |  –2147483648 to 2147483647
+    int64      |  –9223372036854775808 to 9223372036854775807
+    uint8      |  0 to 255
+    uint16     |  0 to 65535
+    uint32     |  0 to 4294967295
+    uint64     |  0 to 18446744073709551615
 ```
 
+Formulat to findout the range of `Integer Types (Signed and Unsigned)`
+
+- Signed Integers (int8, int16, int32, int64): The range is from `-2^(n-1) to 2^(n-1)-1`.
+
+- Unsigned Integers (uint8, uint16, uint32, uint64): The range is from `0 to 2^(n-1)`
 
 ### 2. Floating-point types
 Floating-point numbers size variation: `float32` / `float64`
