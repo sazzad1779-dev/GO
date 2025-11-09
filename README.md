@@ -309,3 +309,48 @@ It is a compile-time error to declare a local variable and to not read its value
 the Go compiler allows you to create unread constants with
 const.
 
+## CHAPTER 3 - Composite Types
+
+### Arrays—Too Rigid to Use Directly
+ - arrays are rarely used directly in Go.
+ - All elements in the array must be of the type that’s specified.
+ - Go has only one-dimensional arrays.
+ - You cannot read or write past the end of an array or use a negative index.
+
+#### unusual limitation:
+- Go considers the size of the array to be part of the type of the array.
+   - an array [3]int a different type from an array [4]int.
+- you can’t use a type conversion to directly convert arrays of different sizes to identical types. **means dynamic array size can't possible**
+
+
+
+ **declaration array:**
+ ```go
+ 1. 
+var x [3]int // This creates an array of three ints. all of the elements are initialized to zero.
+
+2.
+var x = [3]int{10, 20, 30} // initial values for the array, with an array literal
+
+3. 
+ // specify only the specific indices with values in the array literal:
+var x = [12]int{1, 5: 4, 6, 10: 100, 15}
+// This creates an array of 12 ints with the following values: [1, 0, 0, 0, 0, 4, 6, 0, 0, 0 ,100, 15].
+
+4.
+// array literal size will be array size
+var x = [...]int{10, 20, 30} // replace the number of elements in the array with `...` 
+```
+**Read array:**
+```go
+// Go are read and written using bracket syntax:
+x[0] = 10
+fmt.Println(x[2])
+
+
+//the built-in function len takes in an array and returns its length:
+fmt.Println(len(x))
+
+```
+
+
